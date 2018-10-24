@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey with Validation 2018 10 04 Cheung A</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="well well-lg">       
+                    <form action="/submitted" method='post'>     
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Your Name:</td>
+                                    <td>
+                                        <input type="text" name="q0_full_name" placeholder="First and Last Name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Dojo Location:</td>
+                                    <td>
+                                        <select class="form-control" name="q1_location">
+                                            <option value="Los Angeles">Los Angeles</option>
+                                            <option value="Chicago">Chicago</option>
+                                            <option value="Seattle">Seattle</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Favorite Coding Language:</td>
+                                    <td>
+                                        <select class="form-control" name="q2_coding_language">
+                                            <option value="JavaScript">JavaScript</option>
+                                        <option value="Html">Html</option>
+                                            <option value="CSS">CSS</option>
+                                            <option value="Python">Python</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>                        
+                                </tr>                    
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <label for="q3_comment">Comments:</label>
+                            <textarea class="form-control" name="q3_comment" rows="5"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Submitted</button>
+                    </form>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for messages in messages %}
+                                <p>{{messages}}</p>       
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</body>
+</html>
+
+
